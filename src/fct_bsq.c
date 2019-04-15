@@ -15,6 +15,7 @@
 //structure à la place de fct maximum
 //uint16 a la place de maximum
 
+
 static short make_calcul(short left_case, short up_case, short upleft_case)
 {
     if (left_case < up_case) {
@@ -97,17 +98,6 @@ int fct_bsq(char *main_str)
     if (arr == NULL)
         return (84);
     print_bsq(main_str, index, nb_column, arr[index]);
-/*
-    printf("\n%d\n", index);
-    printf("\n%d\n", arr[index]);
-
-    for (int i = 0; i <= (nb_lign * nb_column); i++) {
-        printf("%d", arr[i]);
-        if (arr[i] == -1)
-            printf("\n");
-    }
-    */
-
-    
+    free(arr);
     return (0);
 }

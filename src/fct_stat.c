@@ -21,5 +21,6 @@ int fct_stat(char const *filepath)
         return (-1);
     else
         str_len = statbuf->st_size;
+    free(statbuf);
     return(str_len);
 }
