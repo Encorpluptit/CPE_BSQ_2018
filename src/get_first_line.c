@@ -16,6 +16,8 @@ int get_first_line(char const *str)
 
     for (i = 0; str[i] != '\0' && str[i] != '\n'; i++);
     tmp = malloc(sizeof(char) * (i + 1));
+    if (tmp == NULL)
+        return (-1);
     for (i = 0; str[i] != '\n'; i++) {
         if (is_numeric(str[i]) == 0 || str[i] == '\0')
             return (-1);
@@ -25,7 +27,7 @@ int get_first_line(char const *str)
     tmp[i] = '\0';
     nb_ligne = my_atoi(tmp);
     str = str + (i + 1);
-    free (tmp);
+    free(tmp);
     return (nb_ligne);
 }
 
@@ -37,7 +39,7 @@ int get_nb_column(char const *str)
     return (i + 1);
 }
 
-int wipe_first_line(char  **main_str)
+int wipe_first_line(char **main_str)
 {
     int i = 0;
     int nb_lign = 0;
@@ -45,6 +47,8 @@ int wipe_first_line(char  **main_str)
 
     for (i = 0; (*main_str)[i] != '\0' && (*main_str)[i] != '\n'; i++);
     tmp = malloc(sizeof(char) * (i + 1));
+    if (tmp == NULL)
+        return (-1);
     for (i = 0; (*main_str)[i] != '\n'; i++) {
         if (is_numeric((*main_str)[i]) == 0 || (*main_str)[i] == '\0')
             return (-1);
@@ -54,6 +58,6 @@ int wipe_first_line(char  **main_str)
     tmp[i] = '\0';
     nb_lign = my_atoi(tmp);
     *main_str = *main_str + (i + 1);
-    free (tmp);
+    free(tmp);
     return (nb_lign);
 }
