@@ -15,7 +15,6 @@
 //structure à la place de fct maximum
 //uint16 a la place de maximum
 
-
 static short make_calcul(short left_case, short up_case, short upleft_case)
 {
     if (left_case < up_case) {
@@ -59,7 +58,7 @@ static short *fill_array(short *arr, char const *str, int nb_column, int **ptri)
                                 arr[i - nb_column - 1]);
             ptri = maximum(ptri, i, arr[i]);
         }
-        (i != nb_column)  && (i % (nb_column * j)) == 0 ? j++ : 0;
+        (i != nb_column) && (i % (nb_column * j)) == 0 ? j++ : 0;
         str[i] == 'o' ? arr[i] = 0 : 0;
         str[i] == '\n' ? arr[i] = -1 : 0;
     }
@@ -75,7 +74,7 @@ static void print_bsq(char *main_str, int index, int nb_column, int square_size)
     index = index - ((square_size - 1) * nb_column) - (square_size - 1);
     for (int i = 0; main_str[i] != '\0'; i++) {
         while (i >= (index + (nb_column * j)) &&
-               i < index + (nb_column * j) + square_size && j < square_size) {
+            i < index + (nb_column * j) + square_size && j < square_size) {
             write(1, "x", 1);
             i++;
             flag = 1;

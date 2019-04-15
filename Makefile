@@ -5,12 +5,12 @@
 ## Generic Makefile.
 ##
 
-MAIN	=	main.c
+MAIN	=	main.c	\
+		src/fct_bsq.c	\
 
 SRC	=	src/fct_stat.c	\
 		src/get_main_str.c	\
 		src/get_first_line.c	\
-		src/fct_bsq.c	\
 
 OBJ	=	$(SRC:.c=.o)
 

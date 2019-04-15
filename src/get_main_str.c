@@ -75,6 +75,6 @@ char *get_main_str(char const *filepath)
         main_str = fct_read(fd, str_len);
     if (check_valid_map(main_str, str_len) == -1)
         return NULL;
-    close (fd);
+    close(fd);
     return (main_str);
 }

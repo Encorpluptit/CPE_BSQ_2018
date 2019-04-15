@@ -20,6 +20,6 @@ int main(int ac, char **av)
         return (84);
     }
     fct_bsq(main_str);
-    free (main_str);
+    free(main_str);
     return (0);
 }
