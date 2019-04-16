@@ -53,8 +53,8 @@ static short *fill_array(short *arr, char const *str, int nb_column, int *ptri)
         if (str[i] == '.' && i > nb_column && (i % (nb_column * j)) != 0) {
             arr[i] = make_calcul(arr[i - 1], arr[i - nb_column],
                                 arr[i - nb_column - 1]);
-            maximum(ptri, i, arr[i]);
         }
+        maximum(ptri, i, arr[i]);
         (i != nb_column) && (i % (nb_column * j)) == 0 ? j++ : 0;
         str[i] == 'o' ? arr[i] = 0 : 0;
         str[i] == '\n' ? arr[i] = -1 : 0;
@@ -65,13 +65,15 @@ static short *fill_array(short *arr, char const *str, int nb_column, int *ptri)
 
 static void print_bsq(char *main_str, int index, int nb_column, int square_size)
 {
-    int j = 0;
+    int begin = index - ((square_size - 1) * nb_column) - (square_size - 1);
+    int i = begin;
     short flag = -1;
+    int end = my_strlen(main_str);
 
-    index = index - ((square_size - 1) * nb_column) - (square_size - 1);
-    for (int i = 0; main_str[i] != '\0'; i++) {
-        while (i >= (index + (nb_column * j)) &&
-            i < index + (nb_column * j) + square_size && j < square_size) {
+    write(1, main_str, begin);
+    for (int j = 0; i <= index; i++) {
+        while (i >= (begin + (nb_column * j)) &&
+            i < begin + (nb_column * j) + square_size && j < square_size) {
             write(1, "x", 1);
             i++;
             flag = 1;
@@ -80,6 +82,7 @@ static void print_bsq(char *main_str, int index, int nb_column, int square_size)
         flag == 1 ? j++ : 0;
         flag = 0;
     }
+    write(1, main_str + i, end - i);
 }
 
 int fct_bsq(char *main_str)
