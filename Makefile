@@ -31,7 +31,7 @@ EXEC	=	bsq
 
 LIB_NAME	=	libmylib.a
 
-CFLAGS	=	-W -Wall -Wextra -Wshadow -std=c99 -pedantic -I./include  -Llib -lmylib
+CFLAGS	+=	-W -Wall -Wextra -Wshadow -std=c99 -pedantic -I./include  -Llib -lmylib
 
 TESTS_NAME	=	unit_tests
 

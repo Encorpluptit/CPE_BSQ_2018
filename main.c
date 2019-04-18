@@ -21,7 +21,8 @@ int main(int ac, char **av)
         write(2, "Invalid Map, please use a valid file.\n", 38);
         return (84);
     }
-    fct_bsq(main_str);
+    if (fct_bsq(main_str) == 84)
+        return (84);
     free(main_str);
     return (0);
 }

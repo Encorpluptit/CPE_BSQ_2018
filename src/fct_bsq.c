@@ -10,11 +10,6 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-//remplace i++ par i = i + 1;
-//dans short make calcul, faire le calcul du maximum;
-//structure à la place de fct maximum
-//uint16 a la place de maximum
-
 static short make_calcul(short left_case, short up_case, short upleft_case)
 {
     if (left_case < up_case) {
