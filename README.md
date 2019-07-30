@@ -3,7 +3,9 @@ Find the biggest square (End of project 21/04/19)
 
 Experience in C : 2 months.
 
-## The project _ _ _ _ _ __ _ _ _ _
+## The project 
+
+[Project subject.](/Project/B-CPE-110_BSQ.pdf)
 
 You must find the largest possible square on a board while avoiding obstacles.
 
