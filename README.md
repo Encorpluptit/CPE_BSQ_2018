@@ -26,14 +26,14 @@ You program must print the board, with some “.” replaced by “x” to repre
 
 ![Pgrm Output Example](/Project/Example2_BSQ.png)
 
-
-
-
+ 
 
 
 ## Results:
 
 ### 90.9% functional :
+
+![Nao Marvin](/Project/Results_BSQ.png)
 
 100.00% 01 - 97x21 rectangle (5 tests)
 
