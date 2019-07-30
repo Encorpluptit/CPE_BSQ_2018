@@ -4,6 +4,7 @@
 ** File description:
 ** alllocate memory and copy a string given as a argument
 */
+
 #include <stdlib.h>
 int my_strlen(char const *str);
 char *my_strcpy(char *dest, char const *src);

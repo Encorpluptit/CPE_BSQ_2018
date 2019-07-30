@@ -23,30 +23,32 @@ LIB_SRC	=	lib/my_strlen.c	\
 LIB_OBJ	=	$(LIB_SRC:.c=.o)
 
 TESTS	=	tests/test_fct_stat.c	\
-		tests/test_get_main_str.c	\
 		tests/test_get_first_line.c	\
+		tests/test_get_main_str.c	\
 
 
 EXEC	=	bsq
 
 LIB_NAME	=	libmylib.a
 
-CFLAGS	+=	-W -Wall -Wextra -Wshadow -std=c99 -pedantic -I./include  -Llib -lmylib
+CFLAGS	+=	-W -Wall -Wextra -Wshadow -std=c99 -pedantic -Llib -lmylib
+
+CPPFLAGS	=	-iquote include
 
 TESTS_NAME	=	unit_tests
 
-TESTS_FLAGS	=	--coverage -lcriterion -Llib -lmylib -I./include
+TESTS_FLAGS	=	--coverage -lcriterion -Llib -lmylib -I./include -Wl,--wrap=malloc
 
 all:	lib $(EXEC)
 
 $(EXEC):	$(OBJ)
-	@gcc -o $(EXEC) $(MAIN) $(OBJ) $(CFLAGS)
+	@gcc -o $(EXEC) $(MAIN) $(OBJ) $(CFLAGS) $(CPPFLAGS)
 
 lib:	$(LIB_OBJ)
 	@ar rc lib/$(LIB_NAME) $(LIB_OBJ)
 
 tests_run:	lib
-	@gcc $(SRC) $(TESTS) -o $(TESTS_NAME) $(TESTS_FLAGS)
+	@gcc $(SRC) $(TESTS) -o $(TESTS_NAME) $(TESTS_FLAGS) $(CPPFLAGS)
 	@./$(TESTS_NAME)
 	@mv test*.gc* tests
 	##ligne coverage

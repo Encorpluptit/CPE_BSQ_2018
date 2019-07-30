@@ -13,7 +13,6 @@ char *get_main_str(char const *filepath);
 int get_first_line(char const *str);
 
 int fct_bsq(char *main_str);
-//short make_calcul(short left_case, short up_case, short upleft_case);
 int wipe_first_line(char **main_str);
 int get_nb_column(char const *str);
 
