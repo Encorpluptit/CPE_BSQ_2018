@@ -20,6 +20,15 @@ The board is represented by a file passed as the program’s argument. The file 
 You program must print the board, with some “.” replaced by “x” to represent the largest square you found.
 
 
+## Example
+
+![Map Synthax Example](/Project/Example_BSQ.png)
+
+![Pgrm Output Example](/Project/Example2_BSQ.png)
+
+
+
+
 
 
 ## Results:
